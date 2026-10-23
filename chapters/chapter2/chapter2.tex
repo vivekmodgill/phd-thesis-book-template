@@ -1,0 +1,79 @@
+% ---------------------------------------------------------------------------
+% Chapter based on a PREPRINT, with a graphical abstract and a supplement.
+% The optional argument of \basedon replaces "This chapter is based on:".
+% ---------------------------------------------------------------------------
+\basedon[This chapter is based on a manuscript currently under journal consideration. A preprint is available as:]{%
+Lastname F., Coauthor A., and Coauthor B. Title of the preprint. \textit{bioRxiv} 2025. \url{https://doi.org/10.0000/example}}
+\chapter{Full Title of the Second Research Chapter}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\setcounter{figure}{0}
+
+\chapterauthors{%
+	Firstname Lastname, Author Two, Author Three$^{*}$
+
+	\vspace{0.5em}
+
+	Department, University, City, Country
+
+	\vspace{0.5em}
+
+	\small
+	$^{*}$Corresponding author: \texttt{email@example.org}
+}
+
+\begin{chapterabstract}
+[Abstract text.]
+\vspace{0.5em}
+% Optional graphical abstract on the abstract page
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{chapters/chapter2/figures/placeholder.pdf}
+	\caption*{}
+\end{figure}
+\end{chapterabstract}
+
+\section{Introduction}
+[Text \citep{placeholderArticle2024, placeholderPreprint2025}.]
+
+\section{Methods}
+\subsection{Model}
+[Text.]
+
+\section{Results}
+\subsection{First Result}
+[Text referring to Figure~\ref{fig:ch3-main} and Supplementary Figure~\ref{fig:ch3-supp}.]
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapters/chapter2/figures/placeholder.pdf}
+	\caption{\textbf{Figure title.} Caption text.}
+	\label{fig:ch3-main}
+\end{figure}
+
+\section{Discussion}
+\subsection{Limitations and future directions}
+[Text.]
+
+\section{Acknowledgements}
+[Funding statement.]
+
+% ---------- Supplementary material: figures numbered S1, S2, ... ----------
+\clearpage
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\section{Supplementary Material}
+\subsection{Supplementary analysis}
+[Text.]
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.85\textwidth]{chapters/chapter2/figures/placeholder.pdf}
+	\caption{\textbf{Supplementary figure title.} Caption text.}
+	\label{fig:ch3-supp}
+\end{figure}
+
+% Restore chapter numbering for the following chapters
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}

@@ -1,0 +1,95 @@
+% --- colour & helper commands (move to preamble if you reuse elsewhere) ---
+\definecolor{pfaccent}{HTML}{30475E}
+
+\newcommand{\pfrule}{%
+	\par\noindent{\color{pfaccent!55}\rule{\linewidth}{0.5pt}}\vspace{6pt}\par
+}
+
+\newcommand{\pfentry}[4]{%
+	% #1 year, #2 title, #3 subtitle (e.g. grant info), #4 description
+	\par\noindent
+	\begin{minipage}[t]{0.16\textwidth}
+		\color{pfaccent}\bfseries #1
+	\end{minipage}%
+	\begin{minipage}[t]{0.82\textwidth}
+		\textbf{#2}\\[1pt]
+		{\small\itshape #3}\\[5pt]
+		#4
+	\end{minipage}
+	\par\vspace{10pt}
+}
+
+\newcommand{\pfentrysimple}[3]{%
+	% #1 year, #2 title, #3 description/context
+	\par\noindent
+	\begin{minipage}[t]{0.16\textwidth}
+		\color{pfaccent}\bfseries #1
+	\end{minipage}%
+	\begin{minipage}[t]{0.82\textwidth}
+		\textbf{#2}\\[2pt]
+		{\itshape #3}
+	\end{minipage}
+	\par\vspace{10pt}
+}
+
+\section*{PhD Portfolio}
+\addcontentsline{toc}{section}{PhD Portfolio}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+	Name:              & \ThesisAuthor \\[2pt]
+	Department:        & [Department or centre] \\[2pt]
+	PhD Supervisor:    & \ThesisSupervisor \\[2pt]
+	PhD Co-supervisor: & \ThesisCoSupervisor \\[2pt]
+	Research Period:   & [Month Year]--[Month Year] \\[2pt]
+	PhD Job:           & [Optional: additional role] \\
+\end{tabularx}
+
+\vspace{0.1cm}
+
+\subsection*{Research Projects \& Coordination}
+\pfrule
+
+% \pfentry{years}{title}{funding / subtitle}{description}
+\pfentry{2022--2026}{[Project acronym --- Project name]}{[Funder, Grant No.\ 000000]}{[One-line description of your role in the project.]}
+
+\pfentry{2022--2026}{[Second project]}{[Funder, Grant No.\ 000000]}{[One-line description.]}
+
+\vspace{0.1cm}
+
+\subsection*{Conferences \& Workshops}
+\pfrule
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}l X l l@{}}
+	\toprule
+	\textbf{Year} & \textbf{Event} & \textbf{Role} & \textbf{Location} \\
+	\midrule
+	2026 & [Conference name] & Poster presentation & [City, Country] \\
+	2025 & [Workshop name] & Participant & [City, Country] \\
+	2024 & [Conference name] & Talk & [City, Country] \\
+	\bottomrule
+\end{tabularx}
+
+\vspace{0.11cm}
+\newpage
+\subsection*{Teaching and Mentoring}
+\pfrule
+
+% \pfentrysimple{years}{title}{context}
+\pfentrysimple{2023--2024}{[Teaching activity]}{[Course or programme]}
+
+\vspace{0.1cm}
+
+\subsection*{Student Supervision}
+\pfrule
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}X l@{}}
+	\toprule
+	\textbf{Student} & \textbf{Programme} \\
+	\midrule
+	{[Student name]} & Master's internship \\
+	{[Student name]} & Bachelor's thesis \\
+	\bottomrule
+\end{tabularx}

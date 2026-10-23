@@ -1,0 +1,43 @@
+% =============================================================================
+%  thesisinfo.tex — EVERYTHING PERSONAL LIVES HERE
+%  Fill in these fields once; the title page, colophon, running heads and
+%  portfolio read them. Leave a field empty, e.g. \newcommand{\ThesisISBN}{},
+%  to drop its line from the colophon.
+% =============================================================================
+
+% ---------- Title ----------
+% The title is set over two lines on the title page.
+\newcommand{\ThesisTitleLineOne}{The Main Title of the Thesis}
+\newcommand{\ThesisTitleLineTwo}{Continues on a Second Line}
+\newcommand{\ThesisSubtitleLineOne}{A Subtitle That Explains}
+\newcommand{\ThesisSubtitleLineTwo}{What the Thesis Is About}
+
+% ---------- Author and degree ----------
+\newcommand{\ThesisAuthor}{Firstname Lastname}
+\newcommand{\ThesisDegree}{Doctoral thesis}
+\newcommand{\ThesisInstitution}{Department, University, City}
+\newcommand{\ThesisYear}{2026}
+
+% ---------- Supervision (used on the colophon and in the portfolio) ----------
+\newcommand{\ThesisSupervisor}{Prof. dr. A.B. Supervisor}
+\newcommand{\ThesisCoSupervisor}{Dr. C.D. Co-supervisor}
+
+% ---------- Colophon (page 2) ----------
+\newcommand{\ThesisCoverDesign}{Cover designer}
+\newcommand{\ThesisPrinting}{Printer}
+\newcommand{\ThesisISBN}{978-00-0000-000-0}
+\newcommand{\ThesisDOI}{10.0000/000000}
+% Licence or copyright notice printed at the foot of the colophon
+\newcommand{\ThesisLicence}{This work is licensed under a Creative Commons
+  Attribution 4.0 International licence (CC BY 4.0),
+  \url{https://creativecommons.org/licenses/by/4.0/}.}
+
+% ---------- Running heads ----------
+% One short title per numbered chapter, in order (1 = General introduction).
+% Shown in grey on right-hand pages. Add or remove \or lines to match your chapters.
+\newcommand{\shortchaptertitle}{\ifcase\value{chapter}%
+  \or General introduction%
+  \or Short Title of Chapter 2%
+  \or Short Title of Chapter 3%
+  \or Short Title of Chapter 4%
+  \or General discussion\fi}

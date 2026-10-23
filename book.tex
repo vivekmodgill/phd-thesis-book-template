@@ -1,0 +1,66 @@
+% =============================================================================
+%  PhD thesis — book-format template
+%  170 x 240 mm trim + 3 mm bleed. Compile with pdfLaTeX + BibTeX:
+%      latexmk -pdf book.tex
+%  Personal details:   thesisinfo.tex
+%  Layout and styling: bookformat.tex (book) on top of preamble.tex (packages)
+% =============================================================================
+\documentclass[
+english,
+twoside,
+openright
+]{thesisbook}
+
+\input{preamble}
+\input{thesisinfo}
+\input{bookformat}
+
+\begin{document}
+
+	% ---------- Front matter ----------
+	\pagenumbering{arabic}
+	\input{prologue/titlepage}        % pages 1-2: title page and colophon
+	\tableofcontents
+	\clearpage
+
+	\input{prologue/acknowledgements}
+	\input{prologue/prologue}
+
+	% ---------- Main matter ----------
+	% Each numbered chapter gets an artwork page, an opener, and a grey abstract
+	% spread automatically. Add or remove chapters here and update
+	% \shortchaptertitle in thesisinfo.tex to match.
+	\input{chapters/introduction/introduction}
+	\input{chapters/chapter1/chapter1}
+	\input{chapters/chapter2/chapter2}
+	\input{chapters/chapter3/chapter3}
+	\input{chapters/discussion/discussion}
+
+	% ---------- Back matter ----------
+	% The appendices follow the last chapter on the next right-hand page,
+	% under an "A" thumb tab. Remove any you do not need.
+	\cleardoublepage
+	\appendix
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Appendices}
+
+	\input{appendices/summary}
+	\clearpage
+	\input{appendices/samenvatting}  % Dutch summary; rename or remove for other languages
+	\clearpage
+	\input{appendices/abouttheauthor}
+	\clearpage
+	\input{appendices/datamanagement}
+	\clearpage
+	\input{appendices/portfolio}
+	\clearpage
+	\input{appendices/publications}
+
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{section}{Bibliography}
+	\renewcommand{\evenheadtext}{Bibliography}\renewcommand{\oddheadtext}{Bibliography}
+	\bibliographystyle{apalike-trunc}
+	\bibliography{references}
+
+\end{document}

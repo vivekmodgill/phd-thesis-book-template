@@ -1,0 +1,43 @@
+% Title page (page 1) and colophon (page 2). All text comes from thesisinfo.tex.
+% Positions are measured from the top of the trimmed page (3 mm inside the bleed).
+\begingroup\pagestyle{empty}\sffamily% title page and colophon in Carlito
+\definecolor{tptan}{cmyk}{0,0.30,0.60,0.21}
+
+% ---------- page 1: title page ----------
+\clearpage\thispagestyle{empty}\null
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=base,inner sep=0pt] at ([yshift=-98mm-3mm]current page.north)
+    {\fontsize{15}{15}\selectfont\textls[140]{\MakeUppercase{\ThesisTitleLineOne}}};
+  \node[anchor=base,inner sep=0pt] at ([yshift=-106.5mm-3mm]current page.north)
+    {\fontsize{15}{15}\selectfont\textls[140]{\MakeUppercase{\ThesisTitleLineTwo}}};
+  \draw[tptan,line width=0.5pt] ([xshift=-9mm,yshift=-114mm-3mm]current page.north)
+    -- ([xshift=9mm,yshift=-114mm-3mm]current page.north);
+  \node[anchor=base,inner sep=0pt] at ([yshift=-123mm-3mm]current page.north)
+    {\fontsize{10.5}{10.5}\selectfont\itshape \ThesisSubtitleLineOne};
+  \node[anchor=base,inner sep=0pt] at ([yshift=-128.5mm-3mm]current page.north)
+    {\fontsize{10.5}{10.5}\selectfont\itshape \ThesisSubtitleLineTwo};
+  \node[anchor=base,inner sep=0pt] at ([yshift=-200mm-3mm]current page.north)
+    {\fontsize{9.5}{9.5}\selectfont\textls[160]{\MakeUppercase{\ThesisAuthor}}};
+  \node[anchor=north,inner sep=0pt,align=center,text=gray,font=\fontsize{8}{11}\selectfont]
+    at ([yshift=-205mm-3mm]current page.north) {\ThesisDegree\\\ThesisInstitution\\\ThesisYear};
+\end{tikzpicture}
+
+% ---------- page 2: colophon ----------
+\clearpage\thispagestyle{empty}
+\newcommand{\colline}[2]{\if\relax\detokenize{#2}\relax\else#1: #2\par\fi}
+\vspace*{\fill}
+{\fontsize{8.5}{12}\selectfont\setlength{\parskip}{0pt}\raggedright
+  {\bfseries \ThesisAuthor}\par
+  {\bfseries \ThesisTitleLineOne{} \ThesisTitleLineTwo}\par
+  {\itshape \ThesisSubtitleLineOne{} \ThesisSubtitleLineTwo}\par
+  \medskip
+  \colline{Supervisor}{\ThesisSupervisor}
+  \colline{Co-supervisor}{\ThesisCoSupervisor}
+  \medskip
+%  \colline{Cover design}{\ThesisCoverDesign}
+%  \colline{Printing}{\ThesisPrinting}
+%  \colline{ISBN}{\ThesisISBN}
+%  \colline{DOI}{\ThesisDOI}
+%  \medskip
+%  \ThesisLicence\par}
+%\clearpage\endgroup

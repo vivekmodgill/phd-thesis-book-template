@@ -1,0 +1,69 @@
+% preamble.tex — packages and the chapter front-matter macros (\basedon, \chapterauthors,
+% chapterabstract). bookformat.tex restyles them for the printed book.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, mathtools}
+%\usepackage{natbib}
+\usepackage[authoryear,round]{natbib}
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{ragged2e}
+\usepackage{changepage}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{lastpage}
+\usepackage{epstopdf}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{breakurl}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{adjustbox}
+\IfFileExists{opensans.sty}{\usepackage{opensans}}{}
+\captionsetup[table]{position=bottom}
+
+\captionsetup{width=0.85\textwidth}
+
+\onehalfspacing
+
+\titlespacing*{\section}
+{0pt}{2.0ex plus 0.5ex minus 0.2ex}{1.0ex plus 0.2ex}
+
+\titlespacing*{\subsection}
+{0pt}{1.6ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.2ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{1.2ex plus 0.3ex minus 0.2ex}{0.6ex plus 0.2ex}
+
+\usepackage[hidelinks]{hyperref}
+
+% ---- Chapter front-matter macros (A4 layout; bookformat.tex restyles them for the book) ----
+\def\basedonhead{}
+\def\basedontext{}
+% \basedon[intro line]{citation} — place it directly BEFORE \chapter{...}
+\newcommand{\basedon}[2][This chapter is based on:]{\gdef\basedonhead{#1}\gdef\basedontext{#2}}
+\newcommand{\chapterauthors}[1]{\begin{center}#1\end{center}}
+% \begin{chapterabstract}[Heading] ... \end{chapterabstract}; the heading defaults to "Abstract"
+\newenvironment{chapterabstract}[1][Abstract]
+  {\if\relax\detokenize{#1}\relax\else\section*{#1}\fi}
+  {\par\ifx\basedontext\empty\else\vspace{2em}%
+   \begin{tcolorbox}[colback=gray!6,colframe=gray!35,arc=2pt,boxrule=0.4pt,
+                     left=8pt,right=8pt,top=6pt,bottom=6pt]
+     \small\noindent\textit{\basedonhead}\\[0.3em]\basedontext
+   \end{tcolorbox}\gdef\basedontext{}\fi}
