@@ -4,8 +4,6 @@ A LaTeX template for a PhD thesis printed as a book: 170 × 240 mm with 3 mm
 bleed, chapter artwork pages, thumb tabs and running heads. Fill in one settings
 file, write your chapters, and compile.
 
-![Page overview](docs/preview.png)
-
 ## What you get
 
 - Print-ready page geometry: 176 × 246 mm paper (170 × 240 mm trim + 3 mm bleed)
@@ -22,15 +20,14 @@ file, write your chapters, and compile.
 - Open-source fonts throughout (SIL Open Font License): Libertinus Serif for the
   text (10.5/14 pt), Libertinus Math for equations, and Carlito for headings,
   running heads, tabs and the title page.
-- Back matter: summary, Nederlandse samenvatting, about the author, research data management, PhD
+- Summary, Nederlandse samenvatting, about the author, research data management, PhD
   portfolio and list of publications, under an "A" thumb tab.
 - Author–year citations (natbib) with `apalike-trunc.bst`, which truncates long
   author lists APA-style.
 
 ## Quick start
 
-1. Fill in `thesisinfo.tex`: title, name, degree, institution, supervisors,
-   ISBN/DOI, licence and one short running-head title per chapter.
+1. Fill in `thesisinfo.tex`: title, name, degree, institution, supervisors, and one short running-head title per chapter.
 2. Write your chapters in `chapters/`. Each research chapter shows a different
    case (published paper, preprint with supplement, manuscript in preparation).
 3. Replace `references.bib` with your own bibliography.
